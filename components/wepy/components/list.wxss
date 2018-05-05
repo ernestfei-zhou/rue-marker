@@ -1,0 +1,2 @@
+@import "./empty.wxss";
+scroll-view{height:100%;background:#eee}.lists{margin-top:2rem}.lists .list{padding:.5rem;background:#fff;min-height:150rpx;border-bottom:2rpx solid #ededed;display:flex;align-content:space-between;flex-wrap:wrap;color:#555}.lists .list .title{width:100%;font-size:28rpx}.lists .list .info{color:#999;width:100%;margin-top:.5rem;font-size:24rpx;display:flex;justify-content:space-between}.lists .list .info text{display:inline-block;margin-right:.2rem}

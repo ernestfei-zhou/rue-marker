@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "中心",
+  "usingComponents": {
+    "zan-cell": "../../components/zanui/cell/index",
+    "zan-icon": "../../components/zanui/icon/index",
+    "zan-panel": "../../components/zanui/panel/index",
+    "zan-cell-group": "../../components/zanui/cell-group/index"
+  }
+}

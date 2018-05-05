@@ -1,0 +1,27 @@
+<!--pages/centre/centre.wxml-->
+<loading hidden="{{loading}}">
+  页面加载中...
+</loading>
+
+<service>
+  <view class="subtitle">
+    <image src="/static/images/ic_notice.png" mode="aspectFit" />
+    <view class="demo__icon zan-badge">
+      <text>通知</text>
+      <view class="zan-badge__count" wx:if="{{noticeCount>0}}">{{noticeCount}}      </view>
+    </view>
+    <space/>
+  </view>
+  <view class="item-wrapper">
+    <!--无通知记录-->
+    <view wx:if="{{noticeList.length == 0}}">
+      <view class="imgitem">
+        <image src="/static/images/norecord1.png" class="empty_img"></image>
+      </view>
+      <view class="txtitem">
+        <text class="t28rpx">暂无通知</text>
+      </view>
+    </view>
+  </view>
+
+</service>
