@@ -1,1 +1,5 @@
-{}
+{
+  "navigationBarTitleText": "芸创客欢迎页",
+  "enablePullDownRefresh": false,
+  "disableScroll": true
+}

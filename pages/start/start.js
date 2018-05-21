@@ -1,4 +1,7 @@
 // pages/start/start.js
+
+var app = getApp();
+
 Page({
 
   /**
@@ -8,7 +11,6 @@ Page({
     remind: '加载中',
     angle: 0,
     userInfo: {
-      avatarUrl:'http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg',
     }
   },
 
@@ -60,12 +62,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    var that = this
-    // app.getUserInfo(function (userInfo) {
-    //   that.setData({
-    //     userInfo: userInfo
-    //   })
-    // })
+    var that = this;
+    app.getUserInfo(function (userInfo) {
+      that.setData({
+        userInfo: userInfo
+      })
+      console.log('===>userInfo=' + JSON.stringify(userInfo));
+    });
+    
   },
 
   /**

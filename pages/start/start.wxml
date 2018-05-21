@@ -10,9 +10,9 @@
         <image class="logo" src="{{userInfo.avatarUrl}}"></image>
         <image class="wave" src="/static/images/more/wave.png" mode="aspectFill"></image>
         <image class="wave wave-bg" src="/static/images/more/wave.png" mode="aspectFill"></image>
+        <text >{{userInfo.nickName}}</text>
       </view>
       <view class="bd">
-         <!-- <image class="smalltitle" src="/static/images/more/confirm-word1.png"></image> -->
         <view class="confirm-btn" bindtap='goToIndex'>
           <text >欢迎进入芸创客</text>
         </view>
