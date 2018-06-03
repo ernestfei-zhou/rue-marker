@@ -27,7 +27,7 @@ Page({
     wx.login({
       success: function (res) {
         if (res.code) {
-          console.log("===code=", res.code);
+          console.log("成功登陆!");
         } else {
           console.log('登录失败！' + res.errMsg)
         }
@@ -67,9 +67,8 @@ Page({
       that.setData({
         userInfo: userInfo
       })
-      console.log('===>userInfo=' + JSON.stringify(userInfo));
+      // console.log('===>userInfo=' + JSON.stringify(userInfo));
     });
-    
   },
 
   /**

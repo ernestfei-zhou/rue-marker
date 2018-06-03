@@ -16,39 +16,44 @@ Page({
     buttonClicked: false, //是否点击跳转
     funcs:[
       {
-        name: '前端',
-        url: 'schedule',
+        id:'1',
+        name: '翻译',
+        url: 'open',
         icon: 'schedule',
         bg: '#eacdd1',
-        type: 'login'
+        type: 'open'
       },
       {
-        name: '后端',
+        id: '2',
+        name: '搜索',
         url: 'schedule',
         icon: 'search',
         bg: '#857e95',
-        type: 'login'
+        type: 'search'
       },
       {
+        id: '3',
         name: '数据库',
         url: 'schedule',
         icon: 'loan',
         bg: '#ab96c5',
-        type: 'login'
+        type: 'dbase'
       },
       {
+        id: '4',
         name: '门店',
         url: 'schedule',
         icon: 'classroom',
         bg: '#ab96c5',
-        type: 'login'
+        type: 'store'
       },
       {
+        id: '5',
         name: '品牌',
         url: 'schedule',
         icon: 'grade',
         bg: '#ab96c5',
-        type: 'login'
+        type: 'brand'
       }
     ],
     motto: 'Hello World',
@@ -64,18 +69,14 @@ Page({
       {
         id:"1",
         publisherId:"1",
-        title:"聚合支付轻松对接",
-        actPic:"http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg",
+        acttypename:"翻译插件",
+        title:"面对面翻译",
+        actPic:"http://p9qjq59o4.bkt.clouddn.com/f2f.jpg",
       },
       {
         id: "2",
         publisherId: "2",
-        title: "优秀品牌打造",
-        actPic: "http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg",
-      },
-      {
-        id: "2",
-        publisherId: "2",
+        acttypename: "个人",
         title: "优秀品牌打造",
         actPic: "http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg",
       }
@@ -83,27 +84,58 @@ Page({
     postsList:[
       {
         id:"1",
-        actPic: "http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg",
+        actPic: "http://p9qjq59o4.bkt.clouddn.com/f2f.jpg",
         publisherId:"1",
-        content:"芸创客空间初次见面，请多多包涵！",
+        content:"芸创客最新集成微信开源的面对面中英翻译插件，很棒的一个工具哟！",
         publisherPic:"http://p815u5i8v.bkt.clouddn.com/webwxgetmsgimgdog.jpeg",
         publisherName:"飞飞的🐷",
         pubtime:"23",
         commentnum:"0",
         likenum:"0",
         acttype:"1",
-        acttypename:"个人",
-        title:"这是信息的标题",
-        endtime:"2018-05-06",
+        acttypename:"翻译插件",
+        title:"中英文对话神器，麻麻再也不用担心我的English啦！！！",
+        endtime:"2018-06-4",
         address:"浙江杭州",
       }
     ],//最新动态
   },
+  click_activity:function(e){
+    if (!this.buttonClicked) {
+      util.buttonClicked(this);
+      let actid = e.currentTarget.dataset.actid;
+      let pubid = e.currentTarget.dataset.pubid;
+      if (pubid === '1'){
+        let re_url = '../model/f2f/index/index';
+        wx.navigateTo({
+          url: re_url
+        });
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '功能后续更新，敬请期待哟！'
+        })
+      }
+    }
+  },
   //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+  bindViewTap: function(e) {
+    if (!this.buttonClicked) {
+      util.buttonClicked(this);
+      let actid = e.currentTarget.dataset.actid;
+      let pubid = e.currentTarget.dataset.pubid;
+      if (pubid === 'open') {
+        let re_url = '../model/f2f/index/index';
+        wx.navigateTo({
+          url: re_url
+        });
+      } else {
+        wx.showModal({
+          title: '提示',
+          content: '功能后续更新，敬请期待哟！'
+        })
+      }
+    }
   },
   onLoad: function () {
     if (app.globalData.userInfo) {

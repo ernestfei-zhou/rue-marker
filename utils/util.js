@@ -95,10 +95,22 @@ function buttonClicked(self) {
   }, 500)
 }
 
+function recordTime(date) {
+
+  var month = date.getMonth() + 1
+  var day = date.getDate()
+
+  var hour = date.getHours()
+  var minute = date.getMinutes()
+
+  return [month, day].map(formatNumber).join('/') + ' ' + [hour, minute].map(formatNumber).join(':');
+}
+
 module.exports = {
   formatTime: formatTime,
   getDateDiff: getDateDiff,
   buttonClicked: buttonClicked,
+  recordTime, recordTime
 }
 
 

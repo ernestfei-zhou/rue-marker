@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+      "bottom-button": "../../../../components/wx_f2f/components/bottom-button/index",
+      "result-bubble": "../../../../components/wx_f2f/components/result-bubble/index"
+    }
+}

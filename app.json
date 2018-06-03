@@ -3,7 +3,10 @@
     "pages/start/start",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/centre/centre"
+    "pages/centre/centre",
+    "pages/model/f2f/edit/edit",
+    "pages/model/f2f/index/index"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,5 +33,11 @@
         "selectedIconPath": "static/images/tar-about-on.png"
       }
     ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.0.6",
+      "provider": "wx069ba97219f66d99"
+    }
   }
 }

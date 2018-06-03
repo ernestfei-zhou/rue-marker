@@ -15,7 +15,7 @@ App({
         if (res.code) {
           Bmob.User.requestOpenId(res.code, {//获取userData(根据个人的需要，如果需要获取userData的需要在应用密钥中配置你的微信小程序AppId和AppSecret，且在你的项目中要填写你的appId)
             success: function (userData) {
-              console.log('userData=' + JSON.stringify(userData));
+              // console.log('userData=' + JSON.stringify(userData));
               wx.getUserInfo({
                 success: function (result) {
 
@@ -88,5 +88,30 @@ App({
         }
       });
     }
+  },
+  // 权限询问
+  getRecordAuth: function () {
+    wx.getSetting({
+      success(res) {
+        console.log("succ")
+        console.log(res)
+        if (!res.authSetting['scope.record']) {
+          wx.authorize({
+            scope: 'scope.record',
+            success() {
+              // 用户已经同意小程序使用录音功能，后续调用 wx.startRecord 接口不会弹窗询问
+              console.log("succ auth")
+            }, fail() {
+              console.log("fail auth")
+            }
+          })
+        } else {
+          console.log("record has been authed")
+        }
+      }, fail(res) {
+        console.log("fail")
+        console.log(res)
+      }
+    })
   }
 })
